@@ -23,7 +23,7 @@ if SERVER then
 		msg = sam.language.get(msg) or msg
 
 		local admins, players = {}, {}
-		for _, v in ipairs(player.GetAll()) do
+		for _, v in player.Iterator() do
 			table.insert((v:HasPermission("see_hidden_admin_name") or v == admin) and admins or players, v)
 		end
 
